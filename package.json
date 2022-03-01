@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "script": {
+    "tsc": "tsc",
+    "prod": "tsc && node ./build/index.js",
+    "build": "tsc" ,
+    "debug": "tsc --sourcemap"   
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jotranen/nodejs-algorithms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jotranen/nodejs-algorithms/issues"
+  },
+  "homepage": "https://github.com/jotranen/nodejs-algorithms#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "typescript": "^4.6.2"
+  }
+}
