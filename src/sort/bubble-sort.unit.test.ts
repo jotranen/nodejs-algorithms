@@ -1,15 +1,15 @@
 import { assert } from "console";
 import {bubbleSort} from "./bubble-sort";
 
-let arrIn: Array<number> = Array(40).fill(0).map(() => Math.round(Math.random() * 40));
-let arrOut = arrIn.sort((a,b) => { return a - b });
+let input: Array<number> = Array(40).fill(0).map(() => Math.round(Math.random() * 40));
 
-console.log(arrIn);
-console.log(arrOut);
+let expected: Array<number> = input.slice();
+expected.sort((a,b) => { return a - b });
 
 describe("test bubble-sort", () => {
     it("should return", () => {
-        bubbleSort(arrIn);
+        const res = bubbleSort(input);
+        expect(res).toEqual(expected);
     })
 })
 
