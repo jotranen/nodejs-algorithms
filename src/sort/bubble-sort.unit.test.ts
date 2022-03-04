@@ -1,21 +1,15 @@
 import { assert } from "console";
 import {bubbleSort} from "./bubble-sort";
 
-let arr: Array<number> = [5, 1, 4, 2, 8];
+let arrIn: Array<number> = Array(40).fill(0).map(() => Math.round(Math.random() * 40));
+let arrOut = arrIn.sort((a,b) => { return a - b });
+
+console.log(arrIn);
+console.log(arrOut);
 
 describe("test bubble-sort", () => {
     it("should return", () => {
-        
+        bubbleSort(arrIn);
     })
-    bubbleSort(arr);
 })
 
-// expect(bubbleSort(arr).toBe(1));
-
-// console.log(`------------------------------`);
-// console.log(`input         : ${arr}`);
-// const sorted = bubbleSort(arr);
-// console.log(`input-after   : ${arr}`);
-// console.log(`bubble-sorted : ${sorted}`);
-
-// console.log(`------------------------------`);
