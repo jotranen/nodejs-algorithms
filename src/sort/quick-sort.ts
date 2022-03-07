@@ -1,6 +1,3 @@
-import { INSPECT_MAX_BYTES } from "buffer";
-import { arrayBuffer } from "stream/consumers";
-
 export const quickSort = (array: Array<number>, left: number = 0, right: number = array.length - 1) : Array<number> => {
     let index: number;
 
