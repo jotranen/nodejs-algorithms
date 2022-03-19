@@ -1,39 +1,23 @@
-export const quickSort = (array: Array<number>, left: number = 0, right: number = array.length - 1) : Array<number> => {
-    let index: number;
+export const quickSort = (array: Array<number>) : Array<number> => {
 
-    if (array.length > 1) {
-        index = partition(array, left, right);
-        if (left < index - 1) {
-            quickSort(array, left, index - 1);
+    if (array.length <= 1) {
+        return array;
+    }
+
+    let leftArray: Array<number> = [];
+    let rightArray: Array<number> = [];
+    let newArray: Array<number> = [];
+
+    const pivot = array.pop();
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] <= pivot) {
+            leftArray.push(array[i]);
         }
-        if (index < right) {
-            quickSort(array, index, right);
+        else {
+            rightArray.push(array[i]);
         }
     }
 
-    return array;
-}
-
-const partition = (array: Array<number>, left: number = 0, right: number = array.length - 1) => {
-    const pivot = array[Math.floor((right + left) / 2)];
-
-    let i = left;
-    let j = right;
-
-    while (i <=j) {
-        // find item from left side to swap
-        while (array[i] < pivot) {
-            i++;
-        } 
-        // find item from right side to swap
-        while (array[j] > pivot) {
-            j--;
-        }
-        if (i <= j) {
-            [array[i], array[j]] = [array[j], array[i]];
-            i++;
-            j--;
-        }
-    }
-    return i;
+    return newArray.concat(quickSort(leftArray), pivot, quickSort(rightArray));
 }

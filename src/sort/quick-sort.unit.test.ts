@@ -7,7 +7,7 @@ expected.sort((a,b) => { return a - b });
 
 describe("test quick-sort", () => {
     it("should return", () => {
-        const res = quickSort(input, 0, input.length - 1);
+        const res = quickSort(input);
         expect(res).toEqual(expected);
     })
 })
